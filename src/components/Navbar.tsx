@@ -2,7 +2,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import { Icons } from "@/components/Icons";
 import {NavItems} from "@/components/NavItems";
-
+import Cart from "@/components/Cart";
 
 import {hidden} from "next/dist/lib/picocolors";
 import {buttonVariants} from "@/components/ui/button";
@@ -40,7 +40,7 @@ const Navbar = () =>{
                                     </div>}
 
                                     <div className={'ml-4 flow-root lg:ml-6'}>
-                                        {/*<Cart/>*/}
+                                        <Cart/>
                                     </div>
                                 </div>
                             </div>
