@@ -2,6 +2,7 @@ import {router, publicProcedure} from "../trpc/trpc";
 import {AuthCredentialsValidator} from "../lib/validators/account-credentials-validator";
 import {getPayloadClient} from "../get-payload";
 import {TRPCError} from "@trpc/server";
+import {z} from "zod";
 
 
 export const authRouter = router({
@@ -22,7 +23,7 @@ export const authRouter = router({
             })
             console.log("smth", users)
             if (users.length !== 0) {
-                throw new TRPCError({code: 'CONFLICT', message:"User already exists"})
+                throw new TRPCError({code: 'CONFLICT', message: "User already exists"})
             }
 
             await payload.create({
@@ -35,5 +36,20 @@ export const authRouter = router({
             })
 
             return {success: true, sentToEmail: email}
+        }),
+
+    verifyEmail: publicProcedure.input(z.object({token:z.string()})).query(async ({input})=>{
+        const {token} = input
+
+        const payload = await getPayloadClient()
+
+        const isVerified = await payload.verifyEmail({
+            collection:"users",
+            token
         })
+        if(!isVerified) throw new TRPCError({code: "UNAUTHORIZED"})
+
+        return {success: true}
+
+    })
 })
