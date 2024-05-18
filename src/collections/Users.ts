@@ -10,7 +10,7 @@ export const Users: CollectionConfig = {
         }
     },
     access: {
-        read: () => true,
+        read: ({req}) => req.user.role === "admin",
         create: () => true
     },
     fields: [

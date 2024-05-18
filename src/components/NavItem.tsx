@@ -1,12 +1,12 @@
 import {Button} from "@/components/ui/button";
-import {PRODUCT_CATEGORIES} from "@/config";
+import {PRODUCT_TYPE} from "@/config";
 import {bool} from "prop-types";
 import {ChevronDown} from "lucide-react";
 import {cn} from "@/lib/utils";
 import Link from "next/link";
 import Image from 'next/image'
 
-type Category = typeof PRODUCT_CATEGORIES[number]
+type Category = typeof PRODUCT_TYPE[number]
 
 interface NavItemProps {
     category: Category,

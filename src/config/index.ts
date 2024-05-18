@@ -1,44 +1,55 @@
-export const PRODUCT_CATEGORIES = [
+export const PRODUCT_TYPE = [
     {
-        label: 'UI Kits',
-        value: 'ui_kits' as const,
+        label: 'Електронні книги',
+        value: 'electron_books' as const,
         featured: [
             {
-                name: 'Editor picks',
+                name: 'Обране редакцією',
                 href: `/products?category=ui_kits`,
                 imageSrc: '/nav/ui-kits/mixed.jpg',
             },
             {
-                name: 'New Arrivals',
+                name: 'Новинки',
                 href: '/products?category=ui_kits&sort=desc',
                 imageSrc: '/nav/ui-kits/blue.jpg',
             },
             {
-                name: 'Bestsellers',
+                name: 'Бестселлери',
                 href: '/products?category=ui_kits',
                 imageSrc: '/nav/ui-kits/purple.jpg',
             },
         ],
+
+    },
+]
+
+export const PRODUCT_CATEGORIES = [
+    {
+        label: 'Історична проза',
+        value: 'electron_books' as const,
     },
     {
-        label: 'Icons',
-        value: 'icons' as const,
-        featured: [
-            {
-                name: 'Favorite Icon Picks',
-                href: `/products?category=icons`,
-                imageSrc: '/nav/icons/picks.jpg',
-            },
-            {
-                name: 'New Arrivals',
-                href: '/products?category=icons&sort=desc',
-                imageSrc: '/nav/icons/new.jpg',
-            },
-            {
-                name: 'Bestselling Icons',
-                href: '/products?category=icons',
-                imageSrc: '/nav/icons/bestsellers.jpg',
-            },
-        ],
+        label: 'Детективи',
+        value: 'electron_books' as const,
+    },
+    {
+        label: 'Жахи',
+        value: 'horror' as const,
+    },
+    {
+        label: 'Фантастика',
+        value: 'fantastic' as const,
+    },
+    {
+        label: 'Фентезі',
+        value: 'fantasy' as const,
+    },
+    {
+        label: 'Класична література',
+        value: 'classic' as const,
+    },
+    {
+        label: 'Комікси та манга',
+        value: 'comics' as const,
     },
 ]
