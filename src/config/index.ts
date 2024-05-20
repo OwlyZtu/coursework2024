@@ -1,4 +1,4 @@
-export const PRODUCT_TYPE = [
+export const PRODUCT_TYPES = [
     {
         label: 'Електронні книги',
         value: 'electron_books' as const,
@@ -26,11 +26,11 @@ export const PRODUCT_TYPE = [
 export const PRODUCT_CATEGORIES = [
     {
         label: 'Історична проза',
-        value: 'electron_books' as const,
+        value: 'historic' as const,
     },
     {
         label: 'Детективи',
-        value: 'electron_books' as const,
+        value: 'detectives' as const,
     },
     {
         label: 'Жахи',

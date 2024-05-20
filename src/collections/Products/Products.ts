@@ -1,5 +1,5 @@
 import {CollectionConfig} from "payload/types";
-import {PRODUCT_TYPE, PRODUCT_CATEGORIES} from "../../config";
+import {PRODUCT_CATEGORIES, PRODUCT_TYPES} from "../../config";
 
 export const Products: CollectionConfig = {
     slug: "products",
@@ -44,6 +44,13 @@ export const Products: CollectionConfig = {
             required: true
         },
         {
+            name: "type",
+            label: "Type",
+            type: "select",
+            options: PRODUCT_TYPES.map(({label, value}) => ({label, value})),
+            required: true
+        },
+        {
             name: "product_file",
             label: "Product file",
             type: "relationship",
@@ -54,9 +61,9 @@ export const Products: CollectionConfig = {
         {
             name: "stripeId",
             access:{
-                create:()=> false,
-                update:()=> false,
-                read:()=> false,
+                create: ({ req }) => req.user.role === 'admin',
+                read: ({ req }) => req.user.role === 'admin',
+                update: ({ req }) => req.user.role === 'admin',
             },
             type: "text",
             admin:{

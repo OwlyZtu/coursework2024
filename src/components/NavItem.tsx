@@ -1,26 +1,25 @@
 import {Button} from "@/components/ui/button";
-import {PRODUCT_TYPE} from "@/config";
-import {bool} from "prop-types";
+import {PRODUCT_TYPES} from "@/config";
 import {ChevronDown} from "lucide-react";
 import {cn} from "@/lib/utils";
 import Link from "next/link";
 import Image from 'next/image'
 
-type Category = typeof PRODUCT_TYPE[number]
+type Type = typeof PRODUCT_TYPES[number]
 
 interface NavItemProps {
-    category: Category,
+    type: Type,
     handleOpen: () => void,
     isOpen: boolean,
     isAnyOpen: boolean,
     close?: () => void
 }
 
-const NavItem = ({isAnyOpen, category, handleOpen, isOpen, close}: NavItemProps) => {
+const NavItem = ({isAnyOpen, type, handleOpen, isOpen, close}: NavItemProps) => {
     return <div className={'flex'}>
         <div className={'relative flex items-center'}>
             <Button className={'gap-1.5'} onClick={handleOpen} variant={isOpen ? 'secondary' : 'ghost'}>
-                {category.label}
+                {type.label}
                 <ChevronDown className={cn("h-4 w-4 transition-all text-muted-foreground", {
                     "-rotate-180": isOpen,
                 })}/>
@@ -39,7 +38,7 @@ const NavItem = ({isAnyOpen, category, handleOpen, isOpen, close}: NavItemProps)
                     <div className={'mx-auto max-w-7xl px-8'}>
                         <div className={'grid grid-cols-4 gap-x-8 gap-y-10 py-16'}>
                             <div className={'col-span-4 col-start-1 grid grid-cols-3 gap-x-8'}>
-                                {category.featured.map(item => (
+                                {type.featured.map(item => (
                                     <div key={item.name} className={'group relative text-base sm:text-sm'}>
                                         <div
                                             className={'relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75'}>

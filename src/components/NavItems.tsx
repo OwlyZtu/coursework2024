@@ -1,6 +1,6 @@
 'use client'
 
-import { PRODUCT_TYPE } from '@/config'
+import { PRODUCT_TYPES } from '@/config'
 import { useOnClickOutside } from '@/hooks/use-on-click-outside'
 import { useEffect, useRef, useState } from 'react'
 import NavItem from './NavItem'
@@ -32,7 +32,7 @@ const NavItems = () => {
 
     return (
         <div className='flex gap-4 h-full' ref={navRef}>
-            {PRODUCT_TYPE.map((category, i) => {
+            {PRODUCT_TYPES.map((category, i) => {
                 const handleOpen = () => {
                     if (activeIndex === i) {
                         setActiveIndex(null)
@@ -47,7 +47,7 @@ const NavItems = () => {
 
                 return (
                     <NavItem
-                        category={category}
+                        type={category}
                         close={close}
                         handleOpen={handleOpen}
                         isOpen={isOpen}
