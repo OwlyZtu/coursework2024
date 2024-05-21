@@ -9,6 +9,7 @@ import ProductListing from './ProductListing'
 interface ProductReelProps {
     title: string
     subtitle?: string
+    author?: string
     href?: string
     query: TQueryValidator
 }
@@ -16,7 +17,7 @@ interface ProductReelProps {
 const FALLBACK_LIMIT = 4
 
 const ProductReel = (props: ProductReelProps) => {
-    const { title, subtitle, href, query } = props
+    const { title, subtitle, author, href, query } = props
 
     const { data: queryResults, isLoading } =
         trpc.getInfiniteProducts.useInfiniteQuery(
@@ -47,6 +48,11 @@ const ProductReel = (props: ProductReelProps) => {
                         <h1 className='text-2xl font-bold text-gray-900 sm:text-3xl'>
                             {title}
                         </h1>
+                    ) : null}
+                    {subtitle ? (
+                        <p className='mt-2 text-sm text-muted-foreground'>
+                            {author}
+                        </p>
                     ) : null}
                     {subtitle ? (
                         <p className='mt-2 text-sm text-muted-foreground'>

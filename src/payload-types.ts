@@ -46,9 +46,11 @@ export interface Product {
   id: string;
   user?: (string | null) | User;
   name: string;
+  author: string;
   description?: string | null;
   price: number;
   category: 'historic' | 'detectives' | 'horror' | 'fantastic' | 'fantasy' | 'classic' | 'comics';
+  type: 'electron_books';
   product_file: string | ProductFile;
   stripeId?: string | null;
   images: {

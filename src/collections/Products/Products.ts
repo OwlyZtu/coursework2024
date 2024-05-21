@@ -20,39 +20,45 @@ export const Products: CollectionConfig = {
         },
         {
             name: "name",
-            label: "Name",
+            label: "Назва",
+            type: "text",
+            required: true
+        },
+        {
+            name: "author",
+            label: "Автор",
             type: "text",
             required: true
         },
         {
             name: "description",
             type: "textarea",
-            label: "Product details"
+            label: "Опис"
         },
         {
             name: "price",
-            label: "Price",
+            label: "Ціна",
             type: "number",
             required: true,
             min: 0,
         },
         {
             name: "category",
-            label: "Category",
+            label: "Категорія",
             type: "select",
             options: PRODUCT_CATEGORIES.map(({label, value}) => ({label, value})),
             required: true
         },
         {
             name: "type",
-            label: "Type",
+            label: "Тип",
             type: "select",
             options: PRODUCT_TYPES.map(({label, value}) => ({label, value})),
             required: true
         },
         {
             name: "product_file",
-            label: "Product file",
+            label: "Файл продукту",
             type: "relationship",
             required: true,
             relationTo: "product_files",
@@ -60,33 +66,33 @@ export const Products: CollectionConfig = {
         },
         {
             name: "stripeId",
-            access:{
-                create: ({ req }) => req.user.role === 'admin',
-                read: ({ req }) => req.user.role === 'admin',
-                update: ({ req }) => req.user.role === 'admin',
+            access: {
+                create: ({req}) => req.user.role === 'admin',
+                read: ({req}) => req.user.role === 'admin',
+                update: ({req}) => req.user.role === 'admin',
             },
             type: "text",
-            admin:{
+            admin: {
                 hidden: true
             }
         },
         {
             name: "images",
-            label: "Images",
-            type:"array",
+            label: "Фото",
+            type: "array",
             required: true,
-            minRows:1,
-            maxRows:4,
-            labels:{
-                singular:"Image",
-                plural:"Images"
+            minRows: 1,
+            maxRows: 4,
+            labels: {
+                singular: "Image",
+                plural: "Images"
             },
-            fields:[
+            fields: [
                 {
-                    name:"image",
-                    type:"upload",
-                    relationTo:'media',
-                    required:true,
+                    name: "image",
+                    type: "upload",
+                    relationTo: 'media',
+                    required: true,
                 }
             ]
         }
