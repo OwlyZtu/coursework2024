@@ -111,7 +111,7 @@ const Page = async ({ params }: PageProps) => {
                                     className='h-5 w-5 flex-shrink-0 text-green-500'
                                 />
                                 <p className='ml-2 text-sm text-muted-foreground'>
-                                    Eligible for instant delivery
+                                    Доступне для миттєвої доставки
                                 </p>
                             </div>
                         </section>
@@ -137,7 +137,7 @@ const Page = async ({ params }: PageProps) => {
                                         className='mr-2 h-5 w-5 flex-shrink-0 text-gray-400'
                                     />
                                     <span className='text-muted-foreground hover:text-gray-700'>
-                    30 Day Return Guarantee
+                    30 днів гарантія повернення
                   </span>
                                 </div>
                             </div>
@@ -149,8 +149,8 @@ const Page = async ({ params }: PageProps) => {
             <ProductReel
                 href='/products'
                 query={{ category: product.category, limit: 4 }}
-                title={`Similar ${label}`}
-                subtitle={`Browse similar high-quality ${label} just like '${product.name}'`}
+                title={`Схоже ${label}`}
+                subtitle={`З цим товаром часто купують`}
             />
         </MaxWidthWrapper>
     )

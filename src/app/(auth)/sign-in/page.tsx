@@ -74,7 +74,7 @@ const Page = () => {
                     <div className='flex flex-col items-center space-y-2 text-center'>
                         <Icons.logo className='h-20 w-20'/>
                         <h1 className='text-2xl font-semibold tracking-tight'>
-                            Sign in to your account
+                            Зайти до свого акаунту
                         </h1>
 
                         <Link
@@ -83,7 +83,7 @@ const Page = () => {
                                 className: 'gap-1.5',
                             })}
                             href='/sign-up'>
-                            Don&apos;t have an account?
+                            Не маєте акаунту?
                             <ArrowRight className='h-4 w-4'/>
                         </Link>
                     </div>
@@ -92,7 +92,7 @@ const Page = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className='grid gap-2'>
                                 <div className='grid gap-1 py-2'>
-                                    <Label htmlFor='email'>Email</Label>
+                                    <Label htmlFor='email'>Емейл</Label>
                                     <Input
                                         {...register('email')}
                                         className={cn({
@@ -109,7 +109,7 @@ const Page = () => {
                                 </div>
 
                                 <div className='grid gap-1 py-2'>
-                                    <Label htmlFor='password'>Password</Label>
+                                    <Label htmlFor='password'>Пароль</Label>
                                     <Input
                                         {...register('password')}
                                         type='password'

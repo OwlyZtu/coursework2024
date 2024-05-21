@@ -39,7 +39,7 @@ const Cart = () => {
             </SheetTrigger>
             <SheetContent className={'flex w-full flex-col pr-0 sm:max-w-lg'}>
                 <SheetHeader className={'space-y-2.5 pr-6'}>
-                    <SheetTitle>Cart ({itemCount})</SheetTitle>
+                    <SheetTitle>Кошик ({itemCount})</SheetTitle>
                 </SheetHeader>
                 {itemCount > 0 ? (
                     <>
@@ -54,15 +54,15 @@ const Cart = () => {
                             <Separator/>
                             <div className={'space-y-1.5 text-sm'}>
                                 <div className={'flex'}>
-                                    <span className={'flex-1'}>Shipping</span>
-                                    <span>Free</span>
+                                    <span className={'flex-1'}>Доставка</span>
+                                    <span>Безкоштовно</span>
                                 </div>
                                 <div className={'flex'}>
-                                    <span className={'flex-1'}>Total</span>
+                                    <span className={'flex-1'}>Податок покупки</span>
                                     <span>{formatPrice(fee)}</span>
                                 </div>
                                 <div className={'flex'}>
-                                    <span className={'flex-1'}>transaction Fee</span>
+                                    <span className={'flex-1'}>Всього</span>
                                     <span>{formatPrice(cartTotal+fee)}</span>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ const Cart = () => {
                                 <SheetTrigger asChild>
                                     <Link href={'/cart'}
                                           className={buttonVariants({className: 'w-full',})}>
-                                        Continue to Checkout
+                                        Продовжити покупку
                                     </Link>
                                 </SheetTrigger>
                             </SheetFooter>
@@ -89,7 +89,7 @@ const Cart = () => {
                             />
                         </div>
                         <div className='text-xl font-semibold'>
-                            Your cart is empty
+                            Ваша корзина порожня
                         </div>
                         <SheetTrigger asChild>
                             <Link
@@ -100,7 +100,7 @@ const Cart = () => {
                                     className:
                                         'text-sm text-muted-foreground',
                                 })}>
-                                Add items to your cart to checkout
+                                Додайте книги щоб продовжити
                             </Link>
                         </SheetTrigger>
                     </div>

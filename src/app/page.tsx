@@ -27,18 +27,17 @@ export default function Home() {
         <>
             <MaxWidthWrapper>
                 <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
-                    <h1 className={'text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'}> Your marketplace for
-                        high quality {' '}
-                        <span className="text-blue-600"> digital assets</span>. </h1>
+                    <h1 className={'text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'}> Читай книги до
+                        <span className="text-blue-600"> душі</span>. </h1>
                     <p className={'mt-6 text-lg max-w-prose text-muted-foreground'}>
-                        Welcome to MeowBooks. Some text later ill add more
+                        Вітаємо в HippoBooks. Вибирай електронні книги до смаку
                     </p>
                     <div className={'flex flex-col sn:flex-row gap-4 mt-6'}>
-                        <Link href="/products" className={buttonVariants()}>Browse Trending</Link>
-                        <Button variant={'ghost'}>Our quality promise &rarr;</Button>
+                        <Link href="/products" className={buttonVariants()}>Пошук новенького</Link>
+                        <Button variant={'ghost'}>Гарантії &rarr;</Button>
                     </div>
                 </div>
-                <ProductReel query={{sort:"desc", limit:4}} title={'Brand new'} href={'/products'}/>
+                <ProductReel query={{sort:"desc", limit:4}} title={'Новинки'} href={'/products'}/>
             </MaxWidthWrapper>
 
             <section className={'border-t border-gray-200 bg-gray-50'}>
