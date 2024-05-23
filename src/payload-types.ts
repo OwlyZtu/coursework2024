@@ -53,6 +53,7 @@ export interface Product {
   type: 'electron_books';
   product_file: string | ProductFile;
   stripeId?: string | null;
+  priceId?: string | null;
   images: {
     image: string | Media;
     id?: string | null;

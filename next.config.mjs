@@ -10,7 +10,10 @@ const nextConfig = {
                 protocol:"http"
             }
         ]
-    }
+    },
+    experimental: {
+        serverComponentsExternalPackages: ['payload'],
+    },
 };
 
 export default withSentryConfig(nextConfig, {

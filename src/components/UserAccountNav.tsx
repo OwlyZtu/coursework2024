@@ -47,6 +47,16 @@ const UserAccountNav = ({ user }: { user: User }) => {
                     </Link>
                 </DropdownMenuItem>
 
+                {user.role === 'admin' ? (
+                    <>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className='cursor-pointer'>
+                            <Link href='/sell'>
+                                Адміністраторська панель
+                            </Link>
+                        </DropdownMenuItem>
+                    </>
+                    ): null}
                 <DropdownMenuSeparator />
 
                 <DropdownMenuItem
