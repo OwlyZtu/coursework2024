@@ -1,6 +1,6 @@
 import {Access, CollectionConfig} from "payload/types";
 
-const adminsAndUser: Access = ({ req: { user } }) => {
+const adminsAndUser: Access = ({req: {user}}) => {
     if (user.role === 'admin') return true
 
     return {
@@ -13,17 +13,13 @@ const adminsAndUser: Access = ({ req: { user } }) => {
 export const Users: CollectionConfig = {
     slug: "users",
     auth: {
-        verify: {
-            generateEmailHTML: ({token}) => {
-                return `<a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}'></a>`
-            }
-        }
+        verify: false,
     },
     access: {
         read: adminsAndUser,
         create: () => true,
-        update: ({ req }) => req.user.role === 'admin',
-        delete: ({ req }) => req.user.role === 'admin',
+        update: ({req}) => req.user.role === 'admin',
+        delete: ({req}) => req.user.role === 'admin',
     },
     fields: [
         {

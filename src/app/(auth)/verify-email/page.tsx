@@ -31,21 +31,6 @@ const VerifyEmailPage = ({searchParams}: PageProps) => {
                         <h3 className='font-semibold text-2xl'>
                             Перевірте вашу пошту
                         </h3>
-
-                        {toEmail ? (
-                            <p className='text-muted-foreground text-center'>
-                                Ми надіслали лист на пошту {' '}
-                                <span className='font-semibold'>
-                  {toEmail}
-                </span>
-                                .
-                            </p>
-                        ) : (
-                            <p className='text-muted-foreground text-center'>
-                                We&apos;ve sent a verification link to your
-                                email.
-                            </p>
-                        )}
                     </div>
                 )}
             </div>
