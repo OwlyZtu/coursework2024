@@ -4,19 +4,39 @@ export const PRODUCT_TYPES = [
         value: 'electron_books' as const,
         featured: [
             {
-                name: 'Обране редакцією',
-                href: `/products?category=ui_kits`,
-                imageSrc: '/nav/ui-kits/mixed.jpg',
+                name: 'Історична проза',
+                value: 'historic' as const,
+                href: '/products?category=historic',
             },
             {
-                name: 'Новинки',
-                href: '/products?category=ui_kits&sort=desc',
-                imageSrc: '/nav/ui-kits/blue.jpg',
+                name: 'Детективи',
+                value: 'detectives' as const,
+                href: '/products?category=detectives',
             },
             {
-                name: 'Бестселлери',
-                href: '/products?category=ui_kits',
-                imageSrc: '/nav/ui-kits/purple.jpg',
+                name: 'Жахи',
+                value: 'horror' as const,
+                href: '/products?category=horror',
+            },
+            {
+                name: 'Фантастика',
+                value: 'fantastic' as const,
+                href: '/products?category=fantastic',
+            },
+            {
+                name: 'Фентезі',
+                value: 'fantasy' as const,
+                href: '/products?category=fantasy',
+            },
+            {
+                name: 'Класична література',
+                value: 'classic' as const,
+                href: '/products?category=classic',
+            },
+            {
+                name: 'Комікси та манга',
+                value: 'comics' as const,
+                href: '/products?category=comics',
             },
         ],
 
@@ -27,29 +47,36 @@ export const PRODUCT_CATEGORIES = [
     {
         label: 'Історична проза',
         value: 'historic' as const,
+        href: '/products?category=historic',
     },
     {
         label: 'Детективи',
         value: 'detectives' as const,
+        href: '/products?category=detectives',
     },
     {
         label: 'Жахи',
         value: 'horror' as const,
+        href: '/products?category=horror',
     },
     {
         label: 'Фантастика',
         value: 'fantastic' as const,
+        href: '/products?category=fantastic',
     },
     {
         label: 'Фентезі',
         value: 'fantasy' as const,
+        href: '/products?category=fantasy',
     },
     {
         label: 'Класична література',
         value: 'classic' as const,
+        href: '/products?category=classic',
     },
     {
         label: 'Комікси та манга',
         value: 'comics' as const,
+        href: '/products?category=comics',
     },
 ]

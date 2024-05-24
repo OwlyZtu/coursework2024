@@ -1,8 +1,8 @@
 'use client'
 
-import { PRODUCT_TYPES } from '@/config'
-import { useOnClickOutside } from '@/hooks/use-on-click-outside'
-import { useEffect, useRef, useState } from 'react'
+import {PRODUCT_TYPES} from '@/config'
+import {useOnClickOutside} from '@/hooks/use-on-click-outside'
+import {useEffect, useRef, useState} from 'react'
 import NavItem from './NavItem'
 
 const NavItems = () => {
@@ -31,32 +31,35 @@ const NavItems = () => {
     useOnClickOutside(navRef, () => setActiveIndex(null))
 
     return (
-        <div className='flex gap-4 h-full' ref={navRef}>
-            {PRODUCT_TYPES.map((category, i) => {
-                const handleOpen = () => {
-                    if (activeIndex === i) {
-                        setActiveIndex(null)
-                    } else {
-                        setActiveIndex(i)
+        <>
+            <div className='flex gap-4 h-full' ref={navRef}>
+                {PRODUCT_TYPES.map((category, i) => {
+                    const handleOpen = () => {
+                        if (activeIndex === i) {
+                            setActiveIndex(null)
+                        } else {
+                            setActiveIndex(i)
+                        }
                     }
-                }
 
-                const close = () => setActiveIndex(null)
+                    const close = () => setActiveIndex(null)
 
-                const isOpen = i === activeIndex
+                    const isOpen = i === activeIndex
 
-                return (
-                    <NavItem
-                        type={category}
-                        close={close}
-                        handleOpen={handleOpen}
-                        isOpen={isOpen}
-                        key={category.value}
-                        isAnyOpen={isAnyOpen}
-                    />
-                )
-            })}
-        </div>
+                    return (
+                        <NavItem
+                            type={category}
+                            close={close}
+                            handleOpen={handleOpen}
+                            isOpen={isOpen}
+                            key={category.value}
+                            isAnyOpen={isAnyOpen}
+                        />
+                    )
+                })}
+
+            </div>
+        </>
     )
 }
 
