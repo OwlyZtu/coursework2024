@@ -1,7 +1,7 @@
 'use client'
 
 import {PRODUCT_TYPES} from '@/config'
-import {useOnClickOutside} from '@/hooks/use-on-click-outside'
+import {useOnClickOutside} from '../hooks/use-on-click-outside'
 import {useEffect, useRef, useState} from 'react'
 import NavItem from './NavItem'
 

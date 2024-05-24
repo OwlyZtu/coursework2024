@@ -1,9 +1,9 @@
-import {Product} from "@/payload-types";
+import {Product} from "../payload-types";
 import Image from "next/image";
 import {ImageIcon, X} from "lucide-react";
 import {PRODUCT_CATEGORIES} from "@/config";
-import {useCart} from "@/hooks/use-cart";
-import {formatPrice} from "@/lib/utils";
+import {useCart} from "../hooks/use-cart";
+import {formatPrice} from "../lib/utils";
 
 const CartItem = ({product}: { product: Product }) => {
 

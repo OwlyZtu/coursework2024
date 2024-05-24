@@ -2,13 +2,13 @@
 
 import {ShoppingCart} from "lucide-react";
 import {Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
-import {Separator} from "@/components/ui/separator";
-import {formatPrice} from "@/lib/utils";
+import {Separator} from "./ui/separator";
+import {formatPrice} from "../lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import {buttonVariants} from "@/components/ui/button";
-import {useCart} from "@/hooks/use-cart";
-import {ScrollArea} from "@/components/ui/scroll-area";
+import {buttonVariants} from "./ui/button";
+import {useCart} from "../hooks/use-cart";
+import {ScrollArea} from "./ui/scroll-area";
 import CartItem from "@/components/CartItem";
 import {useEffect, useState} from "react";
 
