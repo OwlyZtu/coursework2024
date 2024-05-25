@@ -4,11 +4,14 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
+                protocol: "http",
+                hostname: "localhost",
+            },
+            {
+                protocol: "https",
                 hostname: "coursework2024-production.up.railway.app",
-                pathname:"**",
-                protocol:"https"
-            }
-        ]
+            },
+        ],
     },
     experimental: {
         serverComponentsExternalPackages: ['payload'],
