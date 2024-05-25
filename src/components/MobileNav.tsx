@@ -60,18 +60,26 @@ const MobileNav = () => {
                         </div>
 
                         <div className='mt-2'>
+
                             <ul>
-                                <div className='border-b border-gray-200'>
+                                <li className='border-b border-gray-200'>
                                     <div className='-mb-px flex'>
-                                        <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium'>
+                                        <Link href={'/cart'} className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-2 text-base font-medium'>
+                                            Кошик
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className='border-b border-gray-200'>
+                                    <div className='-mb-px flex'>
+                                        <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-2 text-base font-medium'>
                                             Жанри
                                         </p>
                                     </div>
-                                </div>
+                                </li>
                                 {PRODUCT_CATEGORIES.map((category) => (
                                     <li
                                         key={category.label}
-                                        className='space-y-10 px-4 pb-8 pt-10'>
+                                        className='space-y-10 px-4 pb-8 pt-4'>
 
                                         <div className='grid grid-cols-2 gap-y-10 gap-x-4'>
                                             <div
@@ -96,7 +104,7 @@ const MobileNav = () => {
                                     onClick={() => closeOnCurrent('/sign-in')}
                                     href='/sign-in'
                                     className='-m-2 block p-2 font-medium text-gray-900'>
-                                    Sign in
+                                Ввійти
                                 </Link>
                             </div>
                             <div className='flow-root'>
@@ -104,7 +112,7 @@ const MobileNav = () => {
                                     onClick={() => closeOnCurrent('/sign-up')}
                                     href='/sign-up'
                                     className='-m-2 block p-2 font-medium text-gray-900'>
-                                    Sign up
+                                    Зареєструватися
                                 </Link>
                             </div>
                         </div>

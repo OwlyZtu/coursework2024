@@ -7,17 +7,17 @@ import ProductReel from "@/components/ProductReel";
 
 const perks = [
     {
-        name: 'Instant delivery',
+        name: 'Миттєва доставка',
         icon: ArrowDownToLineIcon,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
-        name: 'Guaranteed quality',
+        name: 'Гарантія якості',
         icon: CheckCircleIcon,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
-        name: 'For the Planet',
+        name: 'Для планети',
         icon: Leaf,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     }
@@ -34,7 +34,6 @@ export default function Home() {
                     </p>
                     <div className={'flex flex-col sn:flex-row gap-4 mt-6'}>
                         <Link href="/products" className={buttonVariants()}>Пошук новенького</Link>
-                        <Button variant={'ghost'}>Гарантії &rarr;</Button>
                     </div>
                 </div>
                 <ProductReel query={{sort:"desc", limit:4}} title={'Новинки'} href={'/products'}/>
@@ -42,8 +41,7 @@ export default function Home() {
 
             <section className={'border-t border-gray-200 bg-gray-50'}>
                 <MaxWidthWrapper className={'py-20'}>
-                    <div className={'grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3' +
-                        'lg:gap-x-8 lg:gap-y-0'}>
+                    <div className={'grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0'}>
                         {perks.map((perk) => (
                             <div key={perk.name}
                                  className={'text-center md:flex md:items-start md:text-left lg:block lg:text-center'}>

@@ -25,7 +25,7 @@ const Cart = () => {
 
     const cartTotal = items.reduce((total, {product}) => total + product.price, 0)
 
-    let fee = 1;
+    let fee = 30;
     return (
         <Sheet>
             <SheetTrigger className='group -m-2 flex items-center p-2'>
