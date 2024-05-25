@@ -22,7 +22,7 @@ export const authRouter = router({
                     },
                 },
             })
-            console.log("smth", users)
+
             if (users.length !== 0) {
                 throw new TRPCError({code: 'CONFLICT', message: "User already exists"})
             }

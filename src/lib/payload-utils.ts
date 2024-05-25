@@ -10,7 +10,6 @@ export const getServerSideUser = async (
     const token = cookies.get('payload-token')?.value;
 
     if (!token) {
-        console.error('No token found');
         return { user: null };
     }
 
