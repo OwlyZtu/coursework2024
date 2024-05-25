@@ -6,7 +6,6 @@ const nextConfig = {
             {
                 hostname: "coursework2024-production.up.railway.app",
                 pathname:"**",
-                port:"3000",
                 protocol:"https"
             }
         ]
